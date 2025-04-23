@@ -16,11 +16,15 @@
         <hr class="line">               
         <div class="user_input">
             <h3 class="title">Username</h3>
-             <input class= "input" type="text" name="username" placeholder="Username" required>
+            <input class= "input" type="text" name="username" placeholder="Username" required>
         </div>
         <div class="email_input"> 
             <h3 class="title" >Email Address</h3>
             <input class="input" type="email" name="email" placeholder="Email Address" required>
+            <div class="error-message none">
+                <img src="./images/output-onlinepngtools(20).png" alt="" class="error-icon">
+                <h1 class="error-text"> Please enter a valid email address. </h1>
+            </div>
         </div>   
         <div class="pass_input">
             <h3 class="title" >Password</h3>
@@ -33,7 +37,11 @@
         <div class="is_admin">
             <input type="checkbox" name="agree" id="agreeCheckbox"> 
             <h3 class="title" id="isadmin_text">Sign Up as an admin</h3>
-        </div>                
+        </div>           
+        <div class="error-message none" id="pass-error">
+            <img src="./images/output-onlinepngtools(20).png" alt="" class="error-icon">
+            <h1 class="error-text"> Passwords do not match. </h1>
+        </div>     
         <button class="signup_bt" type="submit">Sign Up</button>
     </div>  
     <h5 class="check_acc">Already have an account? <a href="./signin.html">Sign in</a></h5>

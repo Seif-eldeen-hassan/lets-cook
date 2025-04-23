@@ -86,14 +86,20 @@ export function loadnav(page){
         let Recipes = JSON.parse(localStorage.getItem("Recipes")); 
         Recipes.forEach(recipe => {
           const recipeName = recipe.Name.toLowerCase();
-          if (recipeName.startsWith(searchValue)) {
+          const IngredintsArray = recipe.ingredients;
+          
+          let ingredientsNames = [];
+    
+          for(let i = 0 ; i < IngredintsArray.length ; i++){
+            ingredientsNames.push(IngredintsArray[i].IngredientName)
+          }
+          
+          if (recipeName.startsWith(searchValue) || ingredientsNames.includes(searchValue) ) {
             let search_result = document.createElement("div")
             search_result.classList.add("search_result");
             search_result.dataset.recipe_id = recipe.RecipeId;
-
             let line = document.createElement("hr")
             line.classList.add("line")
-            
             search_result.innerHTML = `
             <h1 class="search_name"> ${recipe.Name}  </h1>
             <h1 class="search_course"> ${recipe.Course} </h1>`
